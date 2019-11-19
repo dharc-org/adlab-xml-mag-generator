@@ -3,6 +3,7 @@
 # dharc-xml-mag-generator.py
 # v0.4
 
+import datetime
 import exifread
 import hashlib
 import sys
@@ -13,6 +14,9 @@ path = sys.argv[1]
 ext = sys.argv[2]
 
 # set vars
+local = datetime.datetime.now()
+creation = local.strftime("%Y-%m-%dT%H:%M:%S")
+
 stprog = "http://example.stprog.org"
 agency = "example agency"
 title = "example title"
@@ -43,7 +47,7 @@ xmlMagHeader = '''<?xml version="1.0" encoding="utf-8"?>
     version="2.0.1">
 '''
 
-xmlMagGen='''  <mag:gen creation="2019-04-11T09:49:45">
+xmlMagGen='''  <mag:gen creation="'''+creation+'''">
     <mag:stprog>'''+stprog+'''</mag:stprog>
     <mag:agency>'''+agency+'''</mag:agency>
     <mag:access_rights>1</mag:access_rights>
@@ -88,7 +92,7 @@ for f in files:
           <niso:imagewidth>'''+str(imagewidth)+'''</niso:imagewidth>
         </mag:image_dimensions>
         <mag:format>
-          <niso:name>'''+name'''</niso:name>
+          <niso:name>'''+name+'''</niso:name>
           <niso:mime>'''+mime+'''</niso:mime>
         </mag:format>
         <mag:scanning>
