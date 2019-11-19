@@ -4,7 +4,7 @@ Script to create xml with the mag format from a folder of image files
 # dependency
 Python ExifRead: https://pypi.org/project/ExifRead/
 
-# MAG Xml
+# mag xml
 Manual & info: https://www.iccu.sbn.it/export/sites/iccu/documenti/manuale.html
 
 # example
