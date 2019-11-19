@@ -13,11 +13,15 @@ path = sys.argv[1]
 ext = sys.argv[2]
 
 # set vars
-scanningagency = "da definire"
-devicesource = "Scanner"
-scanner_manufacturer = "Plustek"
-scanner_model = "OpticBook 4800"
-capture_software = "da definire"
+stprog = "http://example.stprog.org"
+agency = "example agency"
+title = "example title"
+
+scanningagency = "example scanningagency"
+devicesource = "example device"
+scanner_manufacturer = "example manufacturer"
+scanner_model = "example model"
+capture_software = "example software"
 
 # list all files with specific extension into "files" array
 files = []
@@ -37,8 +41,8 @@ xmlMagHeader = '''<?xml version="1.0" encoding="utf-8"?>
 '''
 
 xmlMagGen='''  <mag:gen creation="2019-04-11T09:49:45">
-    <mag:stprog>http://ficlit.unibo.it/</mag:stprog>
-    <mag:agency>Dipartimento di Filologia Classica e Italianistica - FICLIT</mag:agency>
+    <mag:stprog>'''+stprog+'''</mag:stprog>
+    <mag:agency>'''+agency+'''</mag:agency>
     <mag:access_rights>1</mag:access_rights>
     <mag:completeness>0</mag:completeness>
   </mag:gen>
@@ -46,7 +50,7 @@ xmlMagGen='''  <mag:gen creation="2019-04-11T09:49:45">
 
 xmlMagBib='''  <mag:bib level="m">
     <dc:identifier>'''+path+'''</dc:identifier>
-    <dc:title>Manoscritti arabi</dc:title>
+    <dc:title>'''+title+'''</dc:title>
   </mag:bib>'''
 
 xmlMagFooter='''</mag:metadigit>'''
@@ -67,22 +71,6 @@ for f in files:
     imagelength = tags['Image ImageLength']
     imagewidth = tags['Image ImageWidth']
     fileRes = tags['Image XResolution']
-
-#./prova/Q_3_1955_0001_piatto_ant.tif
-#{'Image SubfileType': (0x00FE) Long=Full-resolution Image @ 26851518,
-# 'Image ImageWidth': (0x0100) Short=2550 @ 26851530,
-# 'Image ImageLength': (0x0101) Short=3510 @ 26851542,
-# 'Image BitsPerSample': (0x0102) Short=[8, 8, 8] @ 26851682,
-# 'Image Compression': (0x0103) Short=Uncompressed @ 26851566,
-# 'Image PhotometricInterpretation': (0x0106) Short=2 @ 26851578,
-# 'Image StripOffsets': (0x0111) Long=[] @ 26851688,
-# 'Image SamplesPerPixel': (0x0115) Short=3 @ 26851602,
-# 'Image RowsPerStrip': (0x0116) #Short=1 @ 26851614,
-# 'Image StripByteCounts': (0x0117) Long=[] @ 26865728,
-# 'Image XResolution': (0x011A) Ratio=300 @ 26879768,
-# 'Image YResolution': (0x011B) Ratio=300 @ 26879776,
-# 'Image PlanarConfiguration': (0x011C) Short=1 @ 26851662,
-# 'Image ResolutionUnit': (0x0128) Short=Pixels/Inch @ 26851674}
 
     print('''      <mag:img>
         <mag:sequence_number>'''+"{0:0=4d}".format(i)+'''</mag:sequence_number>
