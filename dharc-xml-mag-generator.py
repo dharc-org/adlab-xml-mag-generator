@@ -17,6 +17,9 @@ stprog = "http://example.stprog.org"
 agency = "example agency"
 title = "example title"
 
+name= "TIFF"
+mime = "image/tiff"
+
 scanningagency = "example scanningagency"
 devicesource = "example device"
 scanner_manufacturer = "example manufacturer"
@@ -71,7 +74,7 @@ for f in files:
     imagelength = tags['Image ImageLength']
     imagewidth = tags['Image ImageWidth']
     fileRes = tags['Image XResolution']
-
+    # print mag:img with data
     print('''      <mag:img>
         <mag:sequence_number>'''+"{0:0=4d}".format(i)+'''</mag:sequence_number>
         <mag:nomenclature>PA</mag:nomenclature>
@@ -85,8 +88,8 @@ for f in files:
           <niso:imagewidth>'''+str(imagewidth)+'''</niso:imagewidth>
         </mag:image_dimensions>
         <mag:format>
-          <niso:name>TIFF</niso:name>
-          <niso:mime>image/tiff</niso:mime>
+          <niso:name>'''+name'''</niso:name>
+          <niso:mime>'''+mime+'''</niso:mime>
         </mag:format>
         <mag:scanning>
           <niso:scanningagency>'''+scanningagency+'''</niso:scanningagency>
