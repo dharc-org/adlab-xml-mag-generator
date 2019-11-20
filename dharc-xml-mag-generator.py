@@ -79,32 +79,31 @@ for f in files:
     imagewidth = tags['Image ImageWidth']
     fileRes = tags['Image XResolution']
     # print mag:img with data
-    print('''      <mag:img>
-        <mag:sequence_number>'''+"{0:0=4d}".format(i)+'''</mag:sequence_number>
-        <mag:nomenclature>PA</mag:nomenclature>
-        <mag:usage>1</mag:usage>
-        <mag:scale>0</mag:scale>
-        <mag:file xlink:href="'''+f+'''" Location="URL" xlink:type="simple"/>
-        <mag:md5>'''+md5+'''</mag:md5>
-        <mag:filesize>'''+str(filesize)+'''</mag:filesize>
-        <mag:image_dimensions>
-          <niso:imagelength>'''+str(imagelength)+'''</niso:imagelength>
-          <niso:imagewidth>'''+str(imagewidth)+'''</niso:imagewidth>
-        </mag:image_dimensions>
-        <mag:format>
-          <niso:name>'''+name+'''</niso:name>
-          <niso:mime>'''+mime+'''</niso:mime>
-        </mag:format>
-        <mag:scanning>
-          <niso:scanningagency>'''+scanningagency+'''</niso:scanningagency>
-          <niso:devicesource>'''+devicesource+'''</niso:devicesource>
-          <niso:scanningsystem>
-            <niso:scanner_manufacturer>'''+scanner_manufacturer+'''</niso:scanner_manufacturer>
-            <niso:scanner_model>'''+scanner_model+'''</niso:scanner_model>
-            <niso:capture_software>'''+capture_software+'''</niso:capture_software>
-          </niso:scanningsystem>
-        </mag:scanning>
-      </mag:img>'''),
+    print('''  <mag:img>
+    <mag:sequence_number>'''+"{0:0=4d}".format(i)+'''</mag:sequence_number>
+    <mag:nomenclature>PA</mag:nomenclature>
+    <mag:usage>1</mag:usage>
+    <mag:scale>0</mag:scale>
+    <mag:file xlink:href="'''+f+'''" Location="URL" xlink:type="simple"/>
+    <mag:md5>'''+md5+'''</mag:md5>
+    <mag:filesize>'''+str(filesize)+'''</mag:filesize>
+    <mag:image_dimensions>
+      <niso:imagelength>'''+str(imagelength)+'''</niso:imagelength>
+      <niso:imagewidth>'''+str(imagewidth)+'''</niso:imagewidth>
+    </mag:image_dimensions>
+    <mag:format>
+      <niso:name>'''+name+'''</niso:name>
+      <niso:mime>'''+mime+'''</niso:mime>
+    </mag:format>
+    <mag:scanning>
+      <niso:scanningagency>'''+scanningagency+'''</niso:scanningagency>
+      <niso:devicesource>'''+devicesource+'''</niso:devicesource>
+      <niso:scanningsystem>
+        <niso:scanner_manufacturer>'''+scanner_manufacturer+'''</niso:scanner_manufacturer>
+        <niso:scanner_model>'''+scanner_model+'''</niso:scanner_model>
+        <niso:capture_software>'''+capture_software+'''</niso:capture_software>
+      </niso:scanningsystem>
+    </mag:scanning>\n  </mag:img>'''),
     i+=1
 
 print(xmlMagFooter)
