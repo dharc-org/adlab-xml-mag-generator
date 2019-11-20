@@ -9,6 +9,14 @@ import hashlib
 import sys
 import os
 
+# check arguments
+if len(sys.argv) < 3:
+    print("No parameter has been include")
+    print(" 1) insert a path of images files i.e. images/data")
+    print(" 2) insert an extension i.e. .tif")
+    print("i.e. $ python3 dharc-xml-mag-generator.py images/data .tif")
+    sys.exit()
+
 # get var from arguments
 path = sys.argv[1]
 ext = sys.argv[2]
