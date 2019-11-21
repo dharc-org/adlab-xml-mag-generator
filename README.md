@@ -11,9 +11,10 @@ pip install exifread
 Manual & info: https://www.iccu.sbn.it/export/sites/iccu/documenti/manuale.html
 
 # example
-The scripts need 2 arguments:
-1) Folder with images
-2) Extension of files
+The scripts need 3 arguments:
+1) Custom config.json with personalized data
+2) Folder with images
+3) Extension of files
 ```sh
-$ python dharc-xml-mag-generator.py 1954/Q_1954_12 .tif
+$ python dharc-xml-mag-generator.py config.json 1954/Q_1954_12 .tif
 ```
