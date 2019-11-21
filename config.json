@@ -1,0 +1,14 @@
+{
+    "stprog": "http://example.stprog.org",
+    "agency": "example agency",
+    "title": "example title",
+
+    "name": "TIFF",
+    "mime": "image/tiff",
+
+    "scanningagency": "example scanningagency",
+    "devicesource": "example device",
+    "scanner_manufacturer": "example manufacturer",
+    "scanner_model": "example model",
+    "capture_software": "example software"
+}

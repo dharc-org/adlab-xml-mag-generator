@@ -6,37 +6,44 @@
 import datetime
 import exifread
 import hashlib
+import json
 import sys
 import os
 
 # check arguments
 if len(sys.argv) < 3:
     print("No parameter has been include")
-    print(" 1) insert a path of images files i.e. images/data")
-    print(" 2) insert an extension i.e. .tif")
-    print("i.e. $ python3 dharc-xml-mag-generator.py images/data .tif")
+    print(" 1) json formatted config file i.e. config.json")
+    print(" 2) path of images files i.e. images/data")
+    print(" 3) an extension i.e. .tif")
+    print("i.e. $ python3 dharc-xml-mag-generator.py config.json images/data .tif")
     sys.exit()
 
 # get var from arguments
-path = sys.argv[1]
-ext = sys.argv[2]
+config = sys.argv[1]
+path = sys.argv[2]
+ext = sys.argv[3]
+
+# get json config file
+with open(config, "r") as f:
+    configVars = json.load(f)
 
 # set vars
 local = datetime.datetime.now()
 creation = local.strftime("%Y-%m-%dT%H:%M:%S")
 
-stprog = "http://example.stprog.org"
-agency = "example agency"
-title = "example title"
+stprog = configVars["stprog"]
+agency = configVars["agency"]
+title = configVars["title"]
 
-name= "TIFF"
-mime = "image/tiff"
+name = configVars["name"]
+mime = configVars["mime"]
 
-scanningagency = "example scanningagency"
-devicesource = "example device"
-scanner_manufacturer = "example manufacturer"
-scanner_model = "example model"
-capture_software = "example software"
+scanningagency = configVars["scanningagency"]
+devicesource = configVars["devicesource"]
+scanner_manufacturer = configVars["scanner_manufacturer"]
+scanner_model = configVars["scanner_model"]
+capture_software = configVars["capture_software"]
 
 # list all files with specific extension into "files" array
 files = []
