@@ -51,7 +51,8 @@ files = []
 for r, d, f in os.walk(path):
     for file in f:
         if ext in file:
-            files.append(os.path.join(r, file))
+            if not file.startswith('._'): #check for Mac OS hidden files
+                files.append(os.path.join(r, file))
 files.sort()
 
 # xml mag header creation
