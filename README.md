@@ -1,5 +1,5 @@
 # dharc-xml-mag-generator
-Script to create xml with the mag format from a folder of image files
+Create xml with the mag format from a folder of image files
 
 # dependency
 Python ExifRead: https://pypi.org/project/ExifRead/
