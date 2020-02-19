@@ -1,6 +1,7 @@
 {
     "stprog": "http://example.stprog.org",
     "agency": "example agency",
+    "creator": "example creator",
     "title": "example title",
 
     "name": "TIFF",

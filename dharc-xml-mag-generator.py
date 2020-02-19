@@ -12,11 +12,11 @@ import os
 
 # check arguments
 if len(sys.argv) < 3:
-    print("No parameter has been include")
-    print(" 1) json formatted config file i.e. config.json")
+    print("No parameter has been included")
+    print(" 1) path of json formatted config file i.e. config.json")
     print(" 2) path of images files i.e. images/data")
     print(" 3) an extension i.e. .tif")
-    print("i.e. $ python3 dharc-xml-mag-generator.py config.json images/data .tif")
+    print("i.e. $ python3 dharc-xml-mag-generator.py config.json images/dir .tif")
     sys.exit()
 
 # get var from arguments
@@ -34,6 +34,7 @@ creation = local.strftime("%Y-%m-%dT%H:%M:%S")
 
 stprog = configVars["stprog"]
 agency = configVars["agency"]
+creator = configVars["creator"]
 title = configVars["title"]
 
 name = configVars["name"]
@@ -72,7 +73,8 @@ xmlMagGen='''  <mag:gen creation="'''+creation+'''">
 '''
 
 xmlMagBib='''  <mag:bib level="m">
-    <dc:identifier>'''+path+'''</dc:identifier>
+    <dc:identifier>'''+path.lower()+'''</dc:identifier>
+    <dc:creator>'''+creator+'''</dc:creator>
     <dc:title>'''+title+'''</dc:title>
   </mag:bib>'''
 
