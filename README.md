@@ -1,4 +1,4 @@
-# dharc-xml-mag-generator
+# adlab-xml-mag-generator
 Create xml with the mag format from a folder of image files
 
 # dependency
