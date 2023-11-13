@@ -19,7 +19,7 @@ if len(sys.argv) < 5:
     print(" 2) path of json formatted config file i.e. config.json")
     print(" 3) path of images directories subdirs/images")
     print(" 4) an extension i.e. .tif")
-    print("i.e. $ python3 mag-subdirs.py /dir/script/dharc-xml-mag-generator.py config.json .tif")
+    print("i.e. $ python3 mag-subdirs.py /dir/script/adlab-xml-mag-generator.py config.json .tif")
     sys.exit()
 
 # get var from arguments
