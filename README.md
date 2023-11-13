@@ -16,5 +16,5 @@ The scripts need 3 arguments:
 2) Folder with images
 3) Extension of files
 ```sh
-$ python dharc-xml-mag-generator.py config.json 1954/Q_1954_12 .tif
+$ python adlab-xml-mag-generator.py config.json 1954/Q_1954_12 .tif
 ```
