@@ -19,7 +19,7 @@ if len(sys.argv) < 5:
     print(" 2) path of json formatted config file i.e. config.json")
     print(" 3) path of images directories subdirs/images")
     print(" 4) an extension i.e. .tif")
-    print("i.e. $ python3 mag-subdirs.py /dir/script/adlab-xml-mag-generator.py config.json .tif")
+    print("i.e. $ python mag-subdirs.py /dir/script/adlab-xml-mag-generator.py config.json /dir/folder-images/ .tif")
     sys.exit()
 
 # get var from arguments
@@ -35,9 +35,9 @@ dirs.sort()
 
 for f in dirs:
     dirpath = pathlib.Path(path) / f
-    print("python3 "+str(script)+" "+config+" "+str(dirpath)+" "+ext)
+    print("python "+str(script)+" "+config+" "+str(dirpath)+" "+ext)
 
-    p = subprocess.Popen(['python3',str(script),config,str(dirpath),ext], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+    p = subprocess.Popen(['python',str(script),config,str(dirpath),ext], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 #p = subprocess.Popen(['ls'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 
     output = p.stdout.read()
@@ -46,6 +46,6 @@ for f in dirs:
     print(error.decode("utf-8"))
 
     filename=dirpath / os.path.basename(dirpath)
-    f = open(str(filename)+".mag.xml", "w+")
+    f = open(str(filename)+".mag.xml", "w+", encoding="UTF-8")
     f.write(output.decode("utf-8"))
     f.close()
