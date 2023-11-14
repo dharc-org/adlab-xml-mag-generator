@@ -10,6 +10,8 @@ pip install exifread
 # mag xml
 Manual & info: https://www.iccu.sbn.it/export/sites/iccu/documenti/manuale.html
 
+Pdf manual: https://www.iccu.sbn.it/export/sites/iccu/documenti/MAG_Reference201.pdf
+
 # example
 The scripts need 3 arguments:
 1) Custom config.json with personalized data
