@@ -46,6 +46,6 @@ for f in dirs:
     print(error.decode("utf-8"))
 
     filename=dirpath / os.path.basename(dirpath)
-    f = open(str(filename)+".mag.xml", "w+", encoding="UTF-8")
-    f.write(output.decode("utf-8"))
+    f = open(str(filename)+".mag.xml", "w+", encoding="UTF-8", newline='')
+    f.write(output.decode())
     f.close()
