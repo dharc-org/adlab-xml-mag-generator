@@ -16,7 +16,7 @@ if len(sys.argv) < 3:
     print(" 1) path of json formatted config file i.e. config.json")
     print(" 2) path of images files i.e. images/data")
     print(" 3) an extension i.e. .tif")
-    print("i.e. $ python3 dharc-xml-mag-generator.py config.json images/dir .tif")
+    print("i.e. $ python adlab-xml-mag-generator.py config.json images/dir .tif")
     sys.exit()
 
 # get var from arguments
